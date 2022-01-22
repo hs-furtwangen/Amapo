@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameState gameState = GameState.NotStarted;
     [SerializeField] private Daytime daytime = Daytime.Day;
     [SerializeField] private List<PlayerController> characters = new List<PlayerController>();
+    [SerializeField] private Goal goal;
     [SerializeField] private int switchCount = 0;
     [SerializeField] private int switchesLeft = 10;
 
@@ -31,10 +32,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (PlayerController character in characters)
-        {
-            // character.OnGoal += OnGoal;
-        }
+        goal.OnAllPlayerOnGoal += GameWin;
+
+        StartGame();
     }
 
     private void Update() {
@@ -55,12 +55,16 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.GameEnded;
 
+        print("Game over!");
+
         OnGameOver?.Invoke();
     }
 
     private void GameWin()
     {
         gameState = GameState.GameEnded;
+
+        print("Game won!");
 
         OnGameWin?.Invoke();
     }
@@ -78,13 +82,15 @@ public class GameManager : MonoBehaviour
             GameOver();
     }
 
-    public void CharacterOnGoal(PlayerController _character) {
-        bool allGoals = true;
-        foreach (PlayerController character in characters)
-        {
-            // Only check for win if all characters are on goal
-        }
-        if (allGoals)
-            GameWin();
-    }
+    public List<PlayerController> GetCharacters() => characters;
+
+    // public void CharacterOnGoal(PlayerController _character) {
+    //     bool allGoals = true;
+    //     foreach (PlayerController character in characters)
+    //     {
+    //         // Only check for win if all characters are on goal
+    //     }
+    //     if (allGoals)
+    //         GameWin();
+    // }
 }
