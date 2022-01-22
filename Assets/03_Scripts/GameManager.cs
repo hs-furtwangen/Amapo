@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameState gameState = GameState.NotStarted;
     [SerializeField] private Daytime daytime = Daytime.Day;
+    [SerializeField] private PlayerController dayPlayer;
+    [SerializeField] private PlayerController nightPlayer;
     [SerializeField] private List<PlayerController> characters = new List<PlayerController>();
     [SerializeField] private Goal goal;
     [SerializeField] private int switchCount = 0;
@@ -41,6 +43,15 @@ public class GameManager : MonoBehaviour
         InputData inputData = InputController.GetInputData();
         if(inputData.ChangeDaytime) {
             ChangeDaytime();
+        }
+
+        switch(daytime) {
+            case Daytime.Day:
+                dayPlayer.TakeInput(inputData);
+                break;
+            case Daytime.Night:
+                nightPlayer.TakeInput(inputData);
+                break;
         }
     }
 
@@ -80,17 +91,10 @@ public class GameManager : MonoBehaviour
 
         if(switchesLeft <= 0)
             GameOver();
+
+        dayPlayer.ToggleCamera(daytime == Daytime.Day);
+        nightPlayer.ToggleCamera(daytime == Daytime.Night);
     }
 
     public List<PlayerController> GetCharacters() => characters;
-
-    // public void CharacterOnGoal(PlayerController _character) {
-    //     bool allGoals = true;
-    //     foreach (PlayerController character in characters)
-    //     {
-    //         // Only check for win if all characters are on goal
-    //     }
-    //     if (allGoals)
-    //         GameWin();
-    // }
 }
