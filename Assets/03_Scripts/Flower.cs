@@ -5,6 +5,7 @@ using UnityEngine;
 public class Flower : MonoBehaviour
 {
     [SerializeField] private GameObject flowerDay;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private List<Renderer> dayObjects = new List<Renderer>();
     [SerializeField] private GameObject flowerNight;
     [SerializeField] private List<Renderer> nightObjects = new List<Renderer>();
@@ -26,7 +27,7 @@ public class Flower : MonoBehaviour
             allAlpha += color.a;
             dayObject.material.color = color;
         }
-        
+
         flowerDay.SetActive((allAlpha / dayObjects.Count) > alphaThreshold);
 
         allAlpha = 0f;
@@ -44,6 +45,7 @@ public class Flower : MonoBehaviour
     private void ChangeFlower(Daytime daytime)
     {
         this.daytime = daytime;
+        audioSource.Play();
         // if (daytime == Daytime.Day)
         // {
         //     flowerDay.SetActive(true);
