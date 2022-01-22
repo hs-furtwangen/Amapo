@@ -5,6 +5,8 @@ using Unity.Rendering.Universal;
 public class SunController : MonoBehaviour
 {
     [SerializeField] private Light sun;
+    [SerializeField] private Material daySkybox;
+    [SerializeField] private Material nightSkybox;
     [SerializeField] private Daytime startDaytime;
     [SerializeField] private Vector3 dayRotation;
     [SerializeField] private float dayIntensity;
@@ -28,6 +30,10 @@ public class SunController : MonoBehaviour
 
         if (sun.intensity != targetIntensity)
             sun.intensity = Mathf.Lerp(sun.intensity, targetIntensity, intensitySpeed * Time.deltaTime);
+
+        Material mat = RenderSettings.skybox;
+        mat.SetFloat("_SlideValue", Mathf.Lerp(mat.GetFloat("_SlideValue"), targetIntensity == dayIntensity ? 1f : 0f, Time.deltaTime * intensitySpeed));
+        RenderSettings.skybox = mat;
     }
 
     private void OnDaytimeChanged(Daytime _daytime)
