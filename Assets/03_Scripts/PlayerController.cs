@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private CharacterController controller;
     Animator animator;
+    [SerializeField]
+    public CinemachineFreeLook vCam;
 
     private Vector3 playerVelocity;
     public Transform cam;
@@ -25,19 +28,32 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         Debug.Log(animator);
-
     }
 
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public void TakeInput(InputData inputData) {
+        Vector3 direction = inputData.Movement.normalized;
+        MoveCharacter(direction);
+    } 
+
+    public void ToggleCamera(bool enabled) 
+    {
+        vCam.enabled = enabled;
+    }
+
+
+    private void MoveCharacter(Vector3 direction) {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0f) {
             velocity.y = -2f;
         }
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
+ 
+        // float horizontal = Input.GetAxis("Horizontal");
+        // float vertical = Input.GetAxis("Vertical");
 
         if (direction.magnitude >= 0.1f) {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
