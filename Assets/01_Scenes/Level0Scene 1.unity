@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.046403572, g: 0.037887823, b: 0.017722609, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7404,7 +7404,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610407216}
-  m_LocalRotation: {x: -0.13359617, y: -0.25633156, z: -0.03579698, w: 0.95664245}
+  m_LocalRotation: {x: 0.68301266, y: -0.1830127, z: 0.1830127, w: 0.68301266}
   m_LocalPosition: {x: 3.85, y: 12.18, z: -6.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7426,7 +7426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sun: {fileID: 610407218}
   startDaytime: 0
-  dayRotation: {x: 50, y: -30, z: 0}
+  dayRotation: {x: 90, y: -30, z: 0}
   dayIntensity: 1
   nightRotation: {x: -80, y: -30, z: 0}
   nightIntensity: 0.1
@@ -8497,7 +8497,7 @@ PrefabInstance:
     - target: {fileID: -516241362928931038, guid: ee3a708498c9f954784f4f1651bad823,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4891300459700727746, guid: ee3a708498c9f954784f4f1651bad823,
         type: 3}
@@ -14109,7 +14109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1100490891}
-  - component: {fileID: 1100490890}
+  - component: {fileID: 1100490892}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -14117,26 +14117,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1100490890
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100490889}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2f6a1bb03830dbb47b5b9a0114236869, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1100490891
 Transform:
   m_ObjectHideFlags: 0
@@ -14154,6 +14134,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1100490892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100490889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d19e3509cd9d3f47b177bd15e52cfdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 1682313874}
+  doorClosed: {fileID: 1409446102}
 --- !u!1001 &1108558267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15115,6 +15109,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4949840344693828417, guid: 0c1e26d92fd2c544ba09ba4620eace9b,
     type: 3}
   m_PrefabInstance: {fileID: 1370051729}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1409446102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d65c8421f5d83614fb2c2a036bba2a0f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1329265385}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1414386273
 PrefabInstance:
@@ -21317,6 +21317,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53b744ed49c8ae84bbcf4ffe97d62c83, type: 3}
+--- !u!114 &1682313874 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3503658466142541729, guid: 4ee0be7085014fe4cb9efa7b9d58cded,
+    type: 3}
+  m_PrefabInstance: {fileID: 2414553658492939237}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4967d27a7296d3c468db1fa15dead54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1705727470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c3d978d57ae461a41be84d6ee75b5153,
