@@ -42,8 +42,7 @@ public class GameManager : MonoBehaviour
     {
         goal.OnAllPlayerOnGoal += GameWin;
 
-        dayPlayer?.ToggleCamera(false);
-        nightPlayer?.ToggleCamera(false);
+        TurnOffPlayerCameras();
 
         StartCoroutine(StartGameIn(startGameDelay));
     }
@@ -60,6 +59,9 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update() {
+        if(gameState != GameState.Playing)
+            return;
+
         InputData inputData = InputController.GetInputData();
         if(inputData.ChangeDaytime)
             ChangeDaytime();
@@ -80,6 +82,8 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.GameEnded;
 
+        TurnOffPlayerCameras();
+
         print("Game over!");
 
         OnGameOver?.Invoke();
@@ -88,6 +92,8 @@ public class GameManager : MonoBehaviour
     private void GameWin()
     {
         gameState = GameState.GameEnded;
+
+        TurnOffPlayerCameras();
 
         print("Game won!");
 
@@ -108,6 +114,13 @@ public class GameManager : MonoBehaviour
 
         dayPlayer.ToggleCamera(daytime == Daytime.Day);
         nightPlayer.ToggleCamera(daytime == Daytime.Night);
+    }
+
+    public void TurnOffPlayerCameras() {
+        dayPlayer?.ToggleCamera(false);
+        nightPlayer?.ToggleCamera(false);
+
+        worldCam.enabled = true;
     }
 
     public List<PlayerController> GetCharacters()  {
