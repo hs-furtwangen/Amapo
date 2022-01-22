@@ -1254,11 +1254,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4891300459700727746}
   - component: {fileID: -516241362928931038}
-  - component: {fileID: 6031044041424603335}
   - component: {fileID: 8555206538234436489}
+  - component: {fileID: 8457946206469172626}
   m_Layer: 0
   m_Name: Character_Zombie
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1298,19 +1298,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6031044041424603335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5236194839591843192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d333a446240c044ca06422b6cc46ed1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: -516241362928931038}
 --- !u!95 &8555206538234436489
 Animator:
   serializedVersion: 4
@@ -1320,7 +1307,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5236194839591843192}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 08a885fde07e8ba46a00bfc2198cc926, type: 3}
   m_Controller: {fileID: 9100000, guid: e92783faa1eef2042ac915e38c5e93dc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -1331,6 +1318,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8457946206469172626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5236194839591843192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4d47104b8ad3f4299dcba8875bd8a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: -516241362928931038}
+  cam: {fileID: 0}
+  groundCheck: {fileID: 0}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &5640938820298399710
 GameObject:
   m_ObjectHideFlags: 0
