@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     private bool isGrounded;
+    [SerializeField]
     private float playerSpeed = 3f;
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
