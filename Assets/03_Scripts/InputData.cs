@@ -6,4 +6,5 @@ public class InputData
 {
     public Vector3 Movement { get; set; }
     public bool Jump { get; set; }
+    public bool ChangeDaytime { get; set; }
 }
