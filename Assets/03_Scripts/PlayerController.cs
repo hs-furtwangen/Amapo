@@ -34,6 +34,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //float horizontal = Input.GetAxis("Horizontal");
+        //float vertical = Input.GetAxis("Vertical");
+        //Vector3 direction = new Vector3(horizontal, 0, vertical);
+        //MoveCharacter(direction);
     }
 
     public void TakeInput(InputData inputData) {
@@ -57,12 +61,16 @@ public class PlayerController : MonoBehaviour
         // float vertical = Input.GetAxis("Vertical");
 
         if (direction.magnitude >= 0.1f) {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            //float targetAngle = (Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y) / 1.3f;
+            //float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            //float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            //transform.rotation = Quaternion.Euler(0f, angle, 0f);
             
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            //Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            Vector3 moveDir = Quaternion.AngleAxis(cam.rotation.eulerAngles.y, Vector3.up) * direction;
             controller.Move(moveDir.normalized * playerSpeed * Time.deltaTime);
+            Quaternion toRotation = Quaternion.LookRotation(moveDir, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 720 * Time.deltaTime);
             animator.SetBool("isWalking", true);
         } else {
             animator.SetBool("isWalking", false);
