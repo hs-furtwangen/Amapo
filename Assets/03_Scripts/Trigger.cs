@@ -9,9 +9,9 @@ public class Trigger : MonoBehaviour
     [SerializeField] private bool isOneTime = false;
     [SerializeField] private Collider coll;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider _other)
     {
-        if (other.CompareTag("Player"))
+        if (_other.CompareTag("Player"))
         {
             if (isOneTime && coll)
                 coll.enabled = false;

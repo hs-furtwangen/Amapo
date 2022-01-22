@@ -47,9 +47,9 @@ public class Flower : MonoBehaviour
         // flowerNight.transform.localScale = Vector3.Lerp(flowerNight.transform.localScale, daytime == Daytime.Day ? Vector3.zero : Vector3.one * targetScale, scaleSpeed * Time.deltaTime);
     }
 
-    private void ChangeFlower(Daytime daytime)
+    private void ChangeFlower(Daytime _daytime)
     {
-        this.daytime = daytime;
+        this.daytime = _daytime;
         audioSource.Play();
         // if (daytime == Daytime.Day)
         // {

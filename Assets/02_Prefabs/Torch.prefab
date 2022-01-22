@@ -45,6 +45,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1170480557095808958, guid: a2f6cf676fddd844ab99ab9b1a476544,
+        type: 3}
+      propertyPath: emmissionSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170480557095808958, guid: a2f6cf676fddd844ab99ab9b1a476544,
+        type: 3}
+      propertyPath: intensitySpeed
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1170480557095808959, guid: a2f6cf676fddd844ab99ab9b1a476544,
         type: 3}
       propertyPath: m_RootOrder

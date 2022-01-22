@@ -30,9 +30,9 @@ public class SunController : MonoBehaviour
             sun.intensity = Mathf.Lerp(sun.intensity, targetIntensity, intensitySpeed * Time.deltaTime);
     }
 
-    private void OnDaytimeChanged(Daytime daytime)
+    private void OnDaytimeChanged(Daytime _daytime)
     {
-        targetRotation = daytime == Daytime.Day ? dayRotation : nightRotation;
-        targetIntensity = daytime == Daytime.Day ? dayIntensity : nightIntensity;
+        targetRotation = _daytime == Daytime.Day ? dayRotation : nightRotation;
+        targetIntensity = _daytime == Daytime.Day ? dayIntensity : nightIntensity;
     }
 }

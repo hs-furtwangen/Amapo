@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,12 +15,17 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameState gameState = GameState.NotStarted;
     [SerializeField] private Daytime daytime = Daytime.Day;
+    [SerializeField] private CinemachineFreeLook worldCam;
+    [SerializeField] private AudioSource backgroundMusic;
+    [SerializeField] private float backgroundMusicPitchDay = 1f;
+    [SerializeField] private float backgroundMusicPitchNight = 0.5f;
+    [SerializeField] private float backgroundMusicLerpSpeed = 1f;
     [SerializeField] private PlayerController dayPlayer;
     [SerializeField] private PlayerController nightPlayer;
-    [SerializeField] private List<PlayerController> characters = new List<PlayerController>();
     [SerializeField] private Goal goal;
     [SerializeField] private int switchCount = 0;
     [SerializeField] private int switchesLeft = 10;
+    [SerializeField] private float startGameDelay = 3f;
 
     private void Awake()
     {
@@ -36,14 +42,27 @@ public class GameManager : MonoBehaviour
     {
         goal.OnAllPlayerOnGoal += GameWin;
 
-        StartGame();
+        dayPlayer?.ToggleCamera(false);
+        nightPlayer?.ToggleCamera(false);
+
+        StartCoroutine(StartGameIn(startGameDelay));
+    }
+
+    private void StartGame()
+    {
+        gameState = GameState.Playing;
+
+        worldCam.enabled = false;
+        ChangeDaytime();
+        ChangeDaytime();
+
+        OnGameStart?.Invoke();
     }
 
     private void Update() {
         InputData inputData = InputController.GetInputData();
-        if(inputData.ChangeDaytime) {
+        if(inputData.ChangeDaytime)
             ChangeDaytime();
-        }
 
         switch(daytime) {
             case Daytime.Day:
@@ -53,13 +72,8 @@ public class GameManager : MonoBehaviour
                 nightPlayer.TakeInput(inputData);
                 break;
         }
-    }
 
-    private void StartGame()
-    {
-        gameState = GameState.Playing;
-
-        OnGameStart?.Invoke();
+        backgroundMusic.pitch = Mathf.Lerp(backgroundMusic.pitch, daytime == Daytime.Day ? backgroundMusicPitchDay : backgroundMusicPitchNight, backgroundMusicLerpSpeed * Time.deltaTime);
     }
 
     private void GameOver()
@@ -96,5 +110,14 @@ public class GameManager : MonoBehaviour
         nightPlayer.ToggleCamera(daytime == Daytime.Night);
     }
 
-    public List<PlayerController> GetCharacters() => characters;
+    public List<PlayerController> GetCharacters()  {
+        return new List<PlayerController>() { dayPlayer, nightPlayer };
+    }
+
+    IEnumerator StartGameIn(float _seconds)
+    {
+        yield return new WaitForSeconds(_seconds);
+
+        StartGame();
+    }
 }
