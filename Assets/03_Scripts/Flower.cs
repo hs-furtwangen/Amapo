@@ -9,7 +9,9 @@ public class Flower : MonoBehaviour
     [SerializeField] private List<Renderer> dayObjects = new List<Renderer>();
     [SerializeField] private GameObject flowerNight;
     [SerializeField] private List<Renderer> nightObjects = new List<Renderer>();
+    [SerializeField] private float targetScale = 2f;
     [SerializeField] private float fadeSpeed = 0.5f;
+    [SerializeField] private float scaleSpeed = 0.5f;
     [SerializeField] private float alphaThreshold = 0.1f;
     private Daytime daytime;
     private void Start()
@@ -40,6 +42,9 @@ public class Flower : MonoBehaviour
         }
 
         flowerNight.SetActive((allAlpha / nightObjects.Count) > alphaThreshold);
+
+        // flowerDay.transform.localScale = Vector3.Lerp(flowerDay.transform.localScale, daytime == Daytime.Day ? Vector3.one * targetScale : Vector3.zero, scaleSpeed * Time.deltaTime);
+        // flowerNight.transform.localScale = Vector3.Lerp(flowerNight.transform.localScale, daytime == Daytime.Day ? Vector3.zero : Vector3.one * targetScale, scaleSpeed * Time.deltaTime);
     }
 
     private void ChangeFlower(Daytime daytime)

@@ -2043,18 +2043,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
---- !u!114 &440818373 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6031044041424603335, guid: ee3a708498c9f954784f4f1651bad823,
-    type: 3}
-  m_PrefabInstance: {fileID: 440818370}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d333a446240c044ca06422b6cc46ed1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &455016061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5038,6 +5026,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8457946206469172626, guid: ee3a708498c9f954784f4f1651bad823,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1424975217}
     - target: {fileID: 8555206538234436489, guid: ee3a708498c9f954784f4f1651bad823,
         type: 3}
       propertyPath: m_Enabled
@@ -6035,18 +6028,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1097670329}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1107569331 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6031044041424603335, guid: ee3a708498c9f954784f4f1651bad823,
-    type: 3}
-  m_PrefabInstance: {fileID: 936550025}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d333a446240c044ca06422b6cc46ed1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1127294295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7737,7 +7718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424975214}
   m_LocalRotation: {x: 0.35029286, y: -0, z: -0, w: 0.93664026}
-  m_LocalPosition: {x: -45.069305, y: 54.2, z: -58.328644}
+  m_LocalPosition: {x: -45.069305, y: 29.2, z: -24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7809,8 +7790,8 @@ MonoBehaviour:
   gameState: 0
   daytime: 0
   characters:
-  - {fileID: 1107569331}
-  - {fileID: 440818373}
+  - {fileID: 0}
+  - {fileID: 0}
   goal: {fileID: 457269079}
   switchCount: 0
   switchesLeft: 10
