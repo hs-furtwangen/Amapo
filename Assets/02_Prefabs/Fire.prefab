@@ -982,7 +982,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4990,7 +4990,7 @@ MonoBehaviour:
   emmissionSpeed: 1
   intensity: 5
   intensitySpeed: 1
-  audioVolume: 0.5
+  audioVolume: 0.05
   audioVolumeSpeed: 1
   randomOffset: 1
 --- !u!82 &3994401149639100382
@@ -5005,7 +5005,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1f85078b00bfc464495de62404319cda, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
