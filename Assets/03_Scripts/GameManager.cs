@@ -92,7 +92,8 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.GameEnded;
 
-        TogglePlayerCameras();
+        // TogglePlayerCameras();
+        StartCoroutine(TogglePlayerCamerasIn(toggleCamChangeDelay, false));
 
         print("Game over!");
 
@@ -103,7 +104,9 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.GameEnded;
 
-        TogglePlayerCameras();
+        StartCoroutine(TogglePlayerCamerasIn(toggleCamChangeDelay, false));
+
+        // TogglePlayerCameras();
 
         print("Game won!");
 
@@ -179,7 +182,12 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(_seconds);
         ToggleCameras();
+    }
 
+    IEnumerator TogglePlayerCamerasIn(float _seconds, bool _value)
+    {
+        yield return new WaitForSeconds(_seconds);
+        TogglePlayerCameras(_value);
     }
 
     IEnumerator ChangeGameState(GameState _gameState, float _seconds)
