@@ -7,6 +7,7 @@ public class Goal : MonoBehaviour
 {
     public event Action OnAllPlayerOnGoal;
     [SerializeField] private List<PlayerController> characterOnGoal;
+    [SerializeField] private ParticleSystem winParticles;
 
     private void OnTriggerEnter(Collider _other)
     {
@@ -20,8 +21,10 @@ public class Goal : MonoBehaviour
                     characterOnGoal.Add(character);
             }
 
-            if (characterOnGoal.Count == characters.Count)
+            if (characterOnGoal.Count == characters.Count) {
                 OnAllPlayerOnGoal?.Invoke();
+                winParticles.Play();
+            }
         }
         catch (Exception e) { Debug.Log(e); }
     }
