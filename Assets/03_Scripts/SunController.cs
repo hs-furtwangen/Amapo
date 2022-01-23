@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Rendering.Universal;
+// using Unity.Rendering.Universal;
 public class SunController : MonoBehaviour
 {
     [SerializeField] private Light sun;
-    [SerializeField] private Material daySkybox;
-    [SerializeField] private Material nightSkybox;
     [SerializeField] private Daytime startDaytime;
     [SerializeField] private Vector3 dayRotation;
     [SerializeField] private float dayIntensity;

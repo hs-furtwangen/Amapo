@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170480555323463373}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,7 +46,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.9716981, g: 0.5198053, b: 0, a: 1}
   m_Intensity: 6.48
-  m_Range: 60.13
+  m_Range: 250
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4987,9 +4987,9 @@ MonoBehaviour:
   fireLight: {fileID: 1170480555323463378}
   fireAudio: {fileID: 3994401149639100382}
   emissionRate: 20
-  emmissionSpeed: 1
-  intensity: 5
-  intensitySpeed: 1
+  emmissionSpeed: 2
+  intensity: 25
+  intensitySpeed: 0.8
   audioVolume: 0.05
   audioVolumeSpeed: 1
   randomOffset: 1

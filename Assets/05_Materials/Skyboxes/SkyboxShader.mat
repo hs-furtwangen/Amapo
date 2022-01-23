@@ -34,7 +34,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _DayCubemap:
-        m_Texture: {fileID: 8900000, guid: 189644cf065333247a0987da84cdaf50, type: 3}
+        m_Texture: {fileID: 8900000, guid: 74bd2105e0a6ddb4391ce3570d86d849, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NightCubemap:
@@ -61,6 +61,6 @@ Material:
     - _DrawOrder: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SlideValue: 0.7585727
+    - _SlideValue: 0.00062292605
     m_Colors: []
   m_BuildTextureStacks: []
