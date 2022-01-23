@@ -42,6 +42,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     x: 0
     y: 30
     width: 2560
@@ -51,6 +52,8 @@ MonoBehaviour:
   vertical: 0
   controlID: 296
 =======
+=======
+>>>>>>> Stashed changes
     x: -1920
     y: 43
     width: 1920
@@ -72,7 +75,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -98,6 +104,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -190,8 +199,13 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     width: 2560
     height: 1349
+=======
+    width: 1920
+    height: 997
+>>>>>>> Stashed changes
 =======
     width: 1920
     height: 997
@@ -337,7 +351,11 @@ MonoBehaviour:
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Name: SceneView
+=======
+  m_Name: GameView
+>>>>>>> Stashed changes
 =======
   m_Name: GameView
 >>>>>>> Stashed changes
@@ -367,7 +385,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
+=======
+  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> Stashed changes
 =======
   m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
 >>>>>>> Stashed changes
@@ -377,8 +399,13 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_Text: Project
     m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000,
+=======
+    m_Text: Hierarchy
+    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000,
+>>>>>>> Stashed changes
 =======
     m_Text: Hierarchy
     m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000,
@@ -629,7 +656,11 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     x: 408
+=======
+    x: -1544
+>>>>>>> Stashed changes
 =======
     x: -1544
 >>>>>>> Stashed changes
