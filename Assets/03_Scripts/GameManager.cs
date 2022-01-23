@@ -48,21 +48,18 @@ public class GameManager : MonoBehaviour
 
         TogglePlayerCameras(false);
 
-        ChangeDaytime(false, false);
-        // ChangeDaytime(false, false);
-        // ChangeDaytime(false, false);
+        ChangeDaytime(false, false, false);
 
         StartCoroutine(StartGameIn(startGameDelay));
-        // StartGame();
     }
 
     private void StartGame()
     {
         gameState = GameState.Playing;
 
-        // worldCam.enabled = false;
-        ChangeDaytime(true);
-        // ChangeDaytime(false);
+        ChangeDaytime(true, true, false);
+
+        print("Game started");
 
         OnGameStart?.Invoke();
     }
@@ -113,22 +110,25 @@ public class GameManager : MonoBehaviour
         OnGameWin?.Invoke();
     }
 
-    public void ChangeDaytime(bool delay = true, bool toggleCameras = true)
+    public void ChangeDaytime(bool delay = true, bool toggleCameras = true, bool useSwitches = true)
     {
         gameState = GameState.ChangingDaytime;
         daytime = daytime == Daytime.Day ? Daytime.Night : Daytime.Day;
 
-        switchCount++;
-        switchesLeft--;
+        if (useSwitches)
+        {
+            switchCount++;
+            switchesLeft--;
+        }
 
+        OnDaytimeChanged?.Invoke(daytime);
 
-        if (switchesLeft <= 0)
+        if (switchesLeft < 0)
         {
             GameOver();
             return;
         }
 
-        OnDaytimeChanged?.Invoke(daytime);
 
         if (toggleCameras)
         {
@@ -164,6 +164,9 @@ public class GameManager : MonoBehaviour
     {
         return new List<PlayerController>() { dayPlayer, nightPlayer };
     }
+
+    public int GetSwitchesLeft() => switchesLeft;
+    public int GetSwitchCount() => switchCount;
 
     IEnumerator StartGameIn(float _seconds)
     {

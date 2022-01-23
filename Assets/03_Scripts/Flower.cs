@@ -42,24 +42,11 @@ public class Flower : MonoBehaviour
         }
 
         flowerNight.SetActive((allAlpha / nightObjects.Count) > alphaThreshold);
-
-        // flowerDay.transform.localScale = Vector3.Lerp(flowerDay.transform.localScale, daytime == Daytime.Day ? Vector3.one * targetScale : Vector3.zero, scaleSpeed * Time.deltaTime);
-        // flowerNight.transform.localScale = Vector3.Lerp(flowerNight.transform.localScale, daytime == Daytime.Day ? Vector3.zero : Vector3.one * targetScale, scaleSpeed * Time.deltaTime);
     }
 
-    private void ChangeFlower(Daytime _daytime)
+    protected void ChangeFlower(Daytime _daytime)
     {
         this.daytime = _daytime;
         audioSource.Play();
-        // if (daytime == Daytime.Day)
-        // {
-        //     flowerDay.SetActive(true);
-        //     flowerNight.SetActive(false);
-        // }
-        // else
-        // {
-        //     flowerDay.SetActive(false);
-        //     flowerNight.SetActive(true);
-        // }
     }
 }
