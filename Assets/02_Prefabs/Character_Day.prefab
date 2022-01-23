@@ -13,12 +13,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 403060504, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
+      propertyPath: m_XAxis.Value
+      value: -96.04058
+      objectReference: {fileID: 0}
+    - target: {fileID: 403060504, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.3992095
+      value: 2.1072726
       objectReference: {fileID: 0}
     - target: {fileID: 575955172, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.3992095
+      value: 2.1072726
       objectReference: {fileID: 0}
     - target: {fileID: 575955175, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
       propertyPath: m_LocalPosition.x
@@ -46,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 575955175, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000007450581
+      value: 0.000000014901161
+      objectReference: {fileID: 0}
+    - target: {fileID: 958862975, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
+      propertyPath: m_XAxis.Value
+      value: -96.04058
       objectReference: {fileID: 0}
     - target: {fileID: 1149352249, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
       propertyPath: m_LocalPosition.x
@@ -78,7 +86,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1149352254, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.3992095
+      value: 2.1072726
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463447732, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
+      propertyPath: m_XAxis.Value
+      value: -96.04058
       objectReference: {fileID: 0}
     - target: {fileID: 1782611138, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
       propertyPath: m_LocalPosition.x
@@ -94,23 +106,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1782611138, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9866827
+      value: 0.98667777
       objectReference: {fileID: 0}
     - target: {fileID: 1782611138, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16263363
+      value: 0.16263281
       objectReference: {fileID: 0}
     - target: {fileID: 1782611138, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0027383566
+      value: -0.0041239555
       objectReference: {fileID: 0}
     - target: {fileID: 1782611138, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00045135617
+      value: 0.00067975366
       objectReference: {fileID: 0}
     - target: {fileID: 1782611139, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.3992095
+      value: 2.1072726
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134384915, guid: ee3a708498c9f954784f4f1651bad823, type: 3}
+      propertyPath: m_XAxis.Value
+      value: -96.04058
       objectReference: {fileID: 0}
     - target: {fileID: 2508944987337237365, guid: ee3a708498c9f954784f4f1651bad823,
         type: 3}
@@ -127,6 +143,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -17.000002
       objectReference: {fileID: 0}
+    - target: {fileID: 2875254890203367474, guid: ee3a708498c9f954784f4f1651bad823,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cdc163e0a09c66b438e32218c3c43d67, type: 2}
     - target: {fileID: 4891300459700727746, guid: ee3a708498c9f954784f4f1651bad823,
         type: 3}
       propertyPath: m_RootOrder
@@ -200,7 +221,7 @@ PrefabInstance:
     - target: {fileID: 5236194839591843192, guid: ee3a708498c9f954784f4f1651bad823,
         type: 3}
       propertyPath: m_Name
-      value: Character_Zombie_Day
+      value: Character_Day
       objectReference: {fileID: 0}
     - target: {fileID: 5236194839591843192, guid: ee3a708498c9f954784f4f1651bad823,
         type: 3}

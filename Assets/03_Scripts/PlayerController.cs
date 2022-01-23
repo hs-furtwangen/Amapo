@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundMask;
     private bool isGrounded;
     [SerializeField]
-    private float playerSpeed = 3f;
+    public float playerSpeed = 3f;
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
     public Vector3 velocity = new Vector3(0, 0, 0);
@@ -34,10 +34,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float horizontal = Input.GetAxis("Horizontal");
-        //float vertical = Input.GetAxis("Vertical");
-        //Vector3 direction = new Vector3(horizontal, 0, vertical);
-        //MoveCharacter(direction);
+        Debug.Log("is executed");
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        Vector3 direction = new Vector3(horizontal, 0, vertical);
+        MoveCharacter(direction);
     }
 
     public void TakeInput(InputData inputData) {
@@ -52,6 +53,13 @@ public class PlayerController : MonoBehaviour
 
 
     private void MoveCharacter(Vector3 direction) {
+        Debug.Log("test");
+        if (Input.GetKeyDown("space"))
+        {
+            Debug.Log("is pressed");
+            animator.SetBool("sitDown", true);
+        }
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0f) {
             velocity.y = -2f;
