@@ -34,11 +34,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("is executed");
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0, vertical);
-        MoveCharacter(direction);
+        //Debug.Log("is executed");
+        //float horizontal = Input.GetAxis("Horizontal");
+        //float vertical = Input.GetAxis("Vertical");
+        //Vector3 direction = new Vector3(horizontal, 0, vertical);
+        //MoveCharacter(direction);
     }
 
     public void TakeInput(InputData inputData) {
@@ -53,12 +53,15 @@ public class PlayerController : MonoBehaviour
 
 
     private void MoveCharacter(Vector3 direction) {
-        Debug.Log("test");
-        if (Input.GetKeyDown("space"))
-        {
-            Debug.Log("is pressed");
-            animator.SetBool("sitDown", true);
-        }
+        //Debug.Log("test");
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    SitDown();
+        //}
+        //if (Input.GetKeyDown(KeyCode.V))
+        //{
+        //    SitUp();
+        //}
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0f) {
@@ -83,11 +86,16 @@ public class PlayerController : MonoBehaviour
         } else {
             animator.SetBool("isWalking", false);
         }
-
-        // if (Input.GetButtonDown("Jump") && isGrounded) {
-        //     velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue);
-        // }
         velocity.y += gravityValue * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+    public void SitDown()
+    {
+        animator.SetBool("sitDown", true);
+    }
+
+    public void SitUp()
+    {
+        animator.SetBool("sitDown", false);
     }
 }
