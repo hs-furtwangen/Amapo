@@ -56,6 +56,12 @@ public class UIController : MonoBehaviour
     }
 
     private void GameWon() {
+        StartCoroutine(OpenGameWonIn(4f));
+    }
+
+    IEnumerator OpenGameWonIn(float _delay)
+    {
+        yield return new WaitForSeconds(_delay);
         startButton.gameObject.SetActive(true);
         background.SetActive(true);
     }

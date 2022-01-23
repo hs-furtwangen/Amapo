@@ -61,6 +61,6 @@ Material:
     - _DrawOrder: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SlideValue: 0.9855918
+    - _SlideValue: 0.0043157362
     m_Colors: []
   m_BuildTextureStacks: []
