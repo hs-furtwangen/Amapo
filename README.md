@@ -1,4 +1,7 @@
 # Amapo
+## Play here
+https://hs-furtwangen.github.io/Amapo/
+
 ## Description
 This game was createt for the Global Game Jam 2022 with the theme "Duality".
 
@@ -15,7 +18,7 @@ Shift - Toggle day/night
 ## Screenshots
 ![Screenshot](./Images/screenshots.png)
 ![Screenshot](./Images/screenshots14.png)
-![Screenshot](./Images/screenshots23.png)
+![Screenshot](./Images/screenshots22.png)
 ![Screenshot](./Images/screenshots25.png)
 ![Screenshot](./Images/screenshots3.png)
 ![Screenshot](./Images/screenshots5.png)
