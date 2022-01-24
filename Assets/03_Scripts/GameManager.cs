@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
         }
 
         instance = this;
+
+        LockCursor(true);
     }
 
     private void Start()
@@ -59,9 +61,13 @@ public class GameManager : MonoBehaviour
 
         ChangeDaytime(true, true, false);
 
-        print("Game started");
-
         OnGameStart?.Invoke();
+    }
+
+    private void LockCursor(bool _locked)
+    {
+        Cursor.lockState = _locked ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !_locked;
     }
 
     private void Update()
@@ -71,10 +77,15 @@ public class GameManager : MonoBehaviour
         if (gameState != GameState.Playing)
             return;
 
-
         InputData inputData = InputController.GetInputData();
         if (inputData.ChangeDaytime)
             ChangeDaytime();
+
+        if(inputData.PauseGame)
+            LockCursor(false);
+
+        if(inputData.ResumeGame)
+            LockCursor(true);
 
         switch (daytime)
         {
@@ -92,10 +103,7 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.GameEnded;
 
-        // TogglePlayerCameras();
         StartCoroutine(TogglePlayerCamerasIn(toggleCamChangeDelay, false));
-
-        print("Game over!");
 
         OnGameOver?.Invoke();
     }
@@ -105,10 +113,6 @@ public class GameManager : MonoBehaviour
         gameState = GameState.GameEnded;
 
         StartCoroutine(TogglePlayerCamerasIn(toggleCamChangeDelay, false));
-
-        // TogglePlayerCameras();
-
-        print("Game won!");
 
         OnGameWin?.Invoke();
     }

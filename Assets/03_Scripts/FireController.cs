@@ -44,6 +44,5 @@ public class FireController : MonoBehaviour
     {
         yield return new WaitForSeconds(_time);
         fireAudio.Play();
-        Debug.Log("Started sound");
     }
 }

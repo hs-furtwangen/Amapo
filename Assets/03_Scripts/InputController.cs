@@ -10,7 +10,9 @@ public static class InputController
         {
             Movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")),
             Jump = Input.GetKeyDown(KeyCode.Space),
-            ChangeDaytime = Input.GetKeyDown(KeyCode.LeftShift)
+            ChangeDaytime = Input.GetKeyDown(KeyCode.LeftShift),
+            PauseGame = Input.GetKeyDown(KeyCode.Escape),
+            ResumeGame = Input.GetMouseButtonDown(0)
         };
     }
 }

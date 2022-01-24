@@ -45,6 +45,7 @@ public class UIController : MonoBehaviour
     private void GameOver(){
         gameOverText.SetActive(true);
         gameOverScreen.SetActive(true);
+        gameOverPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath,"GameOver.mp4"); 
         gameOverPlayer.Play();
         StartCoroutine(RestartLevelIn(5f));
     }
@@ -85,7 +86,6 @@ public class UIController : MonoBehaviour
 
     public void StartLevelDelayed(int _level)
     {
-        print("StartLevelDelayed");
         FadeIn();
         StartCoroutine(StartLevelIn(_level, loadLevelDelay));
     }
