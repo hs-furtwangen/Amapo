@@ -103,6 +103,8 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.GameEnded;
 
+        LockCursor(false);
+
         StartCoroutine(TogglePlayerCamerasIn(toggleCamChangeDelay, false));
 
         OnGameOver?.Invoke();
@@ -111,6 +113,8 @@ public class GameManager : MonoBehaviour
     private void GameWin()
     {
         gameState = GameState.GameEnded;
+
+        LockCursor(false);
 
         StartCoroutine(TogglePlayerCamerasIn(toggleCamChangeDelay, false));
 
